@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="images/logo.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -18,12 +19,31 @@
     <div class="container">
       <!-- Your code here -->
 
+      <form class="form">
+        <label for="userName">userName
+          <input type="text" name="userName" placeholder="userName">
+        </label>
+        <label for="password">password
+          <input type="text" name="password">
+        </label>
+        <input type="submit">
+      </form>
+
+
       <p class="my-5 text-center">Open the console 🤓</p>
     </div>
 
     <!-- Bootstrap JavaScript library -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <the-script async src="https://ga.jspm.io/npm:es-module-shims@1.6.3/dist/es-module-shims.js"></the-script>
+    <script type="importmap">
+      {
+        "imports": {
+          "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js",
+          "sweetalert2": "https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/+esm"
+        }
+      }
+      </script>
     <!-- Your own JavaScript file -->
-    <script src="javascript/application.js"></script>
+    <script src="javascript/application.js" type="module"></script>
   </body>
 </html>
