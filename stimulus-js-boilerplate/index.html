@@ -21,25 +21,52 @@
   <body>
     <div class="container text-center mt-5">
       <h1>Stimulus JS</h1>
-      <div class="row">
+      <div class="row" data-controller="disable-button" >
         <div class="col-12 pt-1">
-          <button class="btn btn-primary btn-lg" id="click-me">
+          <button class="btn btn-primary btn-lg" 
+                  id="click-me" 
+                  data-action="click->disable-button#disable"
+                  data-disable-button-target="button"
+          >
             Click me!
           </button>
+          <a  href="#" 
+              class="ms-2 d-none" 
+              data-action="click->disable-button#reset"
+              data-disable-button-target="link"
+          >
+            Reset
+          </a>
         </div>
       </div>
 
-      <!-- Remove the `d-none` when you want to display the form -->
-      <div class="col-12 d-none">
-        <form class="row g-2 justify-content-center py-5">
+      <div 
+          class="col-12" 
+          data-controller="movies"
+          data-movies-base-url-value="http://www.omdbapi.com/">  
+        >
+        <form 
+          class="row g-2 justify-content-center py-5"
+          data-action="submit->movies#getMovies"  
+        >
           <div class="col-4">
-            <input type="text" class="form-control" placeholder="Find movie">
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Find movie"
+              data-movies-target="input"  
+            >
           </div>
           <div class="col-1">
             <input type="submit" class="btn btn-primary">
           </div>
         </form>
-        <ul class="list-group list-group-horizontal"></ul>
+        <ul 
+          class="list-group list-group-horizontal"
+          data-movies-target="listMovies"  
+        >
+
+        </ul>
       </div>
     </div>
   </body>
